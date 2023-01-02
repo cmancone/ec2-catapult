@@ -9,7 +9,7 @@ jobs:
       contents: read
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: AWS Login
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -21,3 +21,6 @@ jobs:
       run: terraform init
     - name: Terraform Plan
       run: terraform plan -no-color -input=false
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main'
+      run: terraform apply -auto-approve -input=false
