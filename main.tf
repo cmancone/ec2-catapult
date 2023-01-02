@@ -13,7 +13,7 @@ provider "aws" {
 
 module "test_instance" {
   source = "./ec2_instance"
-  ami = data.aws_ami.ubuntu
+  ami = data.aws_ami.ubuntu.id
   subnet_id = module.vpc.public_subnets[0]
   vpc_id = module.vpc.vpc_id
   name = "test-instance"
