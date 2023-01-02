@@ -1,3 +1,5 @@
+name: Terraform Deploy
+on: [push]
 jobs:
   deploy:
     name: Run Terraform
