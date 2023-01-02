@@ -17,5 +17,4 @@ module "test_instance" {
   subnet_id = module.vpc.public_subnets[0]
   vpc_id = module.vpc.vpc_id
   name = "test-instance"
-  region = var.region
 }
